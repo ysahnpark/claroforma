@@ -1,0 +1,139 @@
+{
+	"account": {
+		"username": "ysahn@test.com",
+		"password": null,
+
+		"verifiedInd": true,
+		//"passwordResetToken": string,
+		//"passwordResetExpires": Date,
+
+		"givenName": "Young Suk",
+		"familyName": "Ahn",
+		"middleName": null,
+		"pictureUri": "https://graph.facebook.com/123456789/picture?type=large",
+
+		"dateOfBirth": "1975-05-27",
+
+		// preferences
+		"locale": "en_US",
+		"timezone": -7,
+	},
+
+	"auths": [
+		{
+			"provider": "facebook",
+			"providerAccountId": "123456789",
+
+			"rawProfile": "{\"last_name\":\"Ahn\",\"first_name\":\"Young-Suk\",\"about\":\"Inspire, Imagine, Invent, Innovate\",\"email\":\"ysahn\\u0040altenia.com\",\"age_range\":{\"min\":21},\"gender\":\"male\",\"education\":[{\"school\":{\"id\":\"107951882571059\",\"name\":\"Colegio De La Salle\"},\"type\":\"High School\",\"year\":{\"id\":\"140829239279495\",\"name\":\"1992\"},\"id\":\"10150096909038639\"},{\"school\":{\"id\":\"115748608439407\",\"name\":\"Carnegie-Mellon University\"},\"type\":\"College\",\"with\":[{\"name\":\"Ming Liu\",\"id\":\"1465243453534193\"}],\"id\":\"10150246923313639\"},{\"concentration\":[{\"id\":\"104076956295773\",\"name\":\"Computer Science\"}],\"school\":{\"id\":\"104013982969446\",\"name\":\"Korea University\"},\"type\":\"College\",\"id\":\"10150096909053639\"},{\"concentration\":[{\"id\":\"106168626080858\",\"name\":\"Software engineering\"}],\"degree\":{\"id\":\"145795242148239\",\"name\":\"Master in Software Engineering\"},\"school\":{\"id\":\"7133766387\",\"name\":\"Carnegie Mellon University\"},\"type\":\"Graduate School\",\"with\":[{\"name\":\"Vj Vijay\",\"id\":\"10155325080539030\"}],\"year\":{\"id\":\"144044875610606\",\"name\":\"2011\"},\"id\":\"479496203638\"}],\"work\":[{\"employer\":{\"id\":\"104115016292967\",\"name\":\"The Walt Disney Company\"},\"location\":{\"id\":\"112586312088556\",\"name\":\"Glendale, California\"},\"position\":{\"id\":\"140963855934463\",\"name\":\"Senior Software Architect\"},\"start_date\":\"2016-10-17\",\"id\":\"10153896172938639\"},{\"end_date\":\"0000-00\",\"employer\":{\"id\":\"137202856328878\",\"name\":\"Altenia Corporation\"},\"position\":{\"id\":\"129469867097597\",\"name\":\"Director\"},\"projects\":[{\"id\":\"282644331786942\",\"description\":\"Developed a Service Oriented Architecture (SOA) based middleware system to integrate back-end applications with channel applications. The system handles an average of 400 transactions per minute. Technologies: AS400, Web Sphere, IBM DB2, Java, Web Services, Spring Framework, XML.\",\"name\":\"Service Mediator for Online Banking Services\"},{\"id\":\"323843604295307\",\"description\":\"Developed a web-based application that collects phone service quality metrics data and provides reporting for auditing. Technologies: Visual Studio 2008 (C#), MVC.NET, Spring.NET, IIS, SQL Server.\",\"name\":\"Mobile Phone Service Quality Indicator Measurement System\"},{\"id\":\"234629923272812\",\"description\":\"Developed a ticket management system that replaced the existing client-server based system. The new web-based system integrated seamlessly with CTI (Telephony) system. It handled 150 concurrent users (agents) including region managers from 12 different countries in Latin America. The new system performed 8 times faster than the previous system.  Technologies: Java, Spring Framework, MySQL, jQuery, Hessian, C# (for CTI application).\",\"name\":\"Customer Support Management System\"}],\"start_date\":\"2007-01-01\",\"id\":\"10150096909003639\"},{\"end_date\":\"2016-10-07\",\"employer\":{\"id\":\"102161333158595\",\"name\":\"Pearson Education, Inc.\"},\"location\":{\"id\":\"106003956105810\",\"name\":\"Boston, Massachusetts\"},\"position\":{\"id\":\"144544815573320\",\"name\":\"Sr. Software Architect\"},\"start_date\":\"2013-06-01\",\"id\":\"10153201365293639\"},{\"description\":\"Research on Ecosystem Platform architecture\",\"end_date\":\"2012-12-31\",\"employer\":{\"id\":\"142142085818889\",\"name\":\"Carnegie Mellon University (Pittsburgh Campus)\"},\"location\":{\"id\":\"114943251851302\",\"name\":\"Pittsburgh, Pennsylvania\"},\"position\":{\"id\":\"137080729661945\",\"name\":\"Research Associate\"},\"start_date\":\"2012-01-01\",\"id\":\"10150958157673639\"},{\"end_date\":\"0000-00\",\"employer\":{\"id\":\"116343455093152\",\"name\":\"Nuri Solutions\"},\"location\":{\"id\":\"108259475871818\",\"name\":\"Seoul, South Korea\"},\"position\":{\"id\":\"140510465980240\",\"name\":\"Business Development Manager\"},\"start_date\":\"0000-00\",\"id\":\"10150096909028639\"},{\"end_date\":\"0000-00\",\"employer\":{\"id\":\"105535276146062\",\"name\":\"IONA Technologies\"},\"location\":{\"id\":\"108259475871818\",\"name\":\"Seoul, South Korea\"},\"position\":{\"id\":\"142046219151525\",\"name\":\"Technical Account Manager\"},\"start_date\":\"0000-00\",\"id\":\"10150096909013639\"}],\"website\":\"www.youngsukahn.com\\nwww.altenia.com\\nwww.culturaplus.net\",\"link\":\"https:\\/\\/www.facebook.com\\/app_scoped_user_id\\/123456789\\/\",\"locale\":\"en_US\",\"timezone\":-7,\"updated_time\":\"2016-10-18T02:08:29+0000\",\"id\":\"123456789\"}"
+		}
+	],
+
+	"profile": {
+		"email": "ysahn@test.com",
+		// "accountUid": TypeUID,
+		"synopsys": "Inspire, Imagine, Invent, Innovate",
+		//"description": string,
+
+		//"hometown": string,
+		"location": {
+			"countryCode": string,
+			"province": string,
+			"city": string,
+			"address": string,
+			"postalCode": string
+		},
+
+		"education": [
+			{
+			"institution": "Colegio De La Salle",
+			"location": string,
+			"degree": "High School",
+			"field": string,
+			"description": string,
+			"activities": string,
+			"fromDate": string,
+			"toDate": "1992"
+			},
+			{
+			"institution": "Korea University",
+			"location": string,
+			"degree": "College",
+			"field": string,
+			"description": string,
+			"activities": string,
+			"fromDate": string,
+			"toDate": "1992"
+			},
+			{
+			"institution": "Carnegie-Mellon University",
+			"location": string,
+			"degree": "Master in Software Engineering",
+			"field": "Software engineering",
+			"description": string,
+			"activities": string,
+			"fromDate": string,
+			"toDate": "2011"
+			}
+		],
+		"expertise": [
+			{
+			"area": string,
+			"level": number,
+			}
+		],
+		"experiences": [
+			{
+			"institution": "The Walt Disney Company",
+			"location": "Glendale, California",
+			"title": "Senior Software Architect",
+			"description": string,
+			"achievements": string,
+			"fromDate": "2016-10-17",
+			"toDate": string,
+			},
+			{
+			"institution": "Altenia Corporation",
+			"location": "Glendale, California",
+			"title": "Director",
+			"description": string,
+			"achievements": string,
+			"fromDate": "2007-01-01",
+			"toDate": "0000-00",
+			},
+			{
+			"institution": "Pearson Education, Inc.",
+			"location": "Boston, Massachusetts",
+			"title": "Sr. Software Architect",
+			"description": string,
+			"achievements": string,
+			"fromDate": "2013-06-01",
+			"toDate": 2016-10-07,
+			},
+			{
+			"institution": "Carnegie Mellon University (Pittsburgh Campus)",
+			"location": "Pittsburgh, Pennsylvania",
+			"title": "Research Associate",
+			"description": "Research on Ecosystem Platform architecture",
+			"achievements": string,
+			"fromDate": "2012-01-01",
+			"toDate": "2012-12-31",
+			}
+		],
+		"accomplishments": [
+			{
+			"type": string, // certification, awards, recognition, patents, papers, project
+			"title": string,
+			"location": string,
+			"description": string,
+			"fromDate": string,
+			"toDate": string,
+			"url": string,
+			}
+		],
+		"interests": Array<string>,
+		"languages": Array<string>,
+		"gender": "male",
+		"website": "www.youngsukahn.com\nwww.altenia.com\nwww.culturaplus.net",
+
+	}
+}
