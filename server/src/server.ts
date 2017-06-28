@@ -11,7 +11,9 @@ import * as dotenv from "dotenv";
 import * as flash from "express-flash";
 import * as path from "path";
 import * as passport from "passport";
+
 import * as connection from "./persistence/MongoConnection";
+import { ElasticSearchConnection } from "./persistence/ElasticSearchConnection";
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -40,7 +42,7 @@ import { userRouter } from "./user/user-router";
 const app = express();
 
 connection.connect(process.env.MONGODB_URI, undefined, undefined);
-
+ElasticSearchConnection.connect("localhost:9200", {});
 
 /**
  * Express configuration.

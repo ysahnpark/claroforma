@@ -80,7 +80,6 @@ accountSchema.methods.gravatar = function(size: number) {
   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 };
 
-// export const User: UserType = mongoose.model<UserType>('User', userSchema);
 export const AccountModel = mongoose.model<IAccountModel>("Account", accountSchema);
 
 export class AccountRepo extends MongooseRepositoryBase<IAccount, IAccountModel> {

@@ -1,9 +1,13 @@
 import { TypeUID, IEntityBase } from "../foundation/model/IEntityBase";
 
-import { IAccount, accountRepo, IAuth, authRepo, IProfile, profileRepo } from "./repo/index";
 import { IUserRecords } from "./IUserRecords";
+import { IAccount, accountRepo, IAuth, authRepo, IProfile, profileRepo } from "./repo/index";
+import { ElasticSearchConnection } from "../persistence/ElasticSearchConnection";
 
 export class UserService {
+
+    public static readonly INDEX_NAME: string = "user";
+    public static readonly TYPE_NAME: string = "serinfo";
 
     constructor() {
 
@@ -16,7 +20,7 @@ export class UserService {
         if (existingUser) {
             // TODO: Verify that the auth provider/id are same.
             if (userRecords.auths && userRecords.auths.length > 0) {
-                const matchingAuth = userRecords.auths.find( (auth) => {
+                const matchingAuth = userRecords.auths.find((auth) => {
                     return auth.provider == userRecords.auths[0].provider
                         && auth.providerAccountId == userRecords.auths[0].providerAccountId;
                 });
@@ -63,6 +67,81 @@ export class UserService {
         };
 
         return userRecords;
+    }
+
+    // Search functionalites:
+
+    async indexUser(user: IUserRecords, refresh = false): Promise<any> {
+        const esclient = ElasticSearchConnection.getClient();
+
+        return new Promise((resolve, reject) => {
+            esclient.create({
+                index: UserService.INDEX_NAME,
+                type: UserService.TYPE_NAME,
+                id: user.account.uid,
+                body: user,
+                refresh: refresh
+            }, function (error, response) {
+                if (error) {
+                    return reject(error);
+                }
+                return resolve(user);
+            });
+        });
+    }
+
+    async searchUser(criteria: any): Promise<any> {
+        const esclient = ElasticSearchConnection.getClient();
+
+        return new Promise((resolve, reject) => {
+            esclient.search({
+                index: UserService.INDEX_NAME,
+                type: UserService.TYPE_NAME,
+                body: criteria
+            }, function (error, response) {
+                if (error) {
+                    return reject(error);
+                }
+                return resolve(response);
+            });
+        });
+    }
+
+    async searchUserByUsername(username: string): Promise<any> {
+
+        const criteria = {
+            "query": {
+                "bool": {
+                    "must": {
+                        "match_all": {}
+                    },
+                    "filter": {
+                        "term": {
+                            "account.username": username
+                        }
+                    }
+                }
+            }
+        };
+        return this.searchUser(criteria);
+    }
+
+
+    async deleteUserIndex(uid: TypeUID): Promise<any> {
+        const esclient = ElasticSearchConnection.getClient();
+
+        return new Promise((resolve, reject) => {
+            esclient.delete({
+                index: UserService.INDEX_NAME,
+                type: UserService.TYPE_NAME,
+                id: uid
+            }, function (error, response) {
+                if (error) {
+                    return reject(error);
+                }
+                return resolve(response);
+            });
+        });
     }
 
 }

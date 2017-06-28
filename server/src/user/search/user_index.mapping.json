@@ -1,0 +1,214 @@
+{
+    "mappings": {
+        "userinfo": {
+            "_all": {
+                "enabled": false
+            },
+            "properties": {
+                "account": {
+                    "type": "object",
+                    "properties": {
+                        "uid": {
+                            "type": "keyword"
+                        },
+                        "username": {
+                            "type": "keyword"
+                        },
+                        "password": {
+                            "type": "keyword"
+                        },
+                        "verifiedInd": {
+                            "type": "boolean"
+                        },
+                        "passwordResetToken": {
+                            "type": "keyword"
+                        },
+                        "passwordResetExpires": {
+                            "type": "date"
+                        },
+                        "givenName": {
+                            "type": "text"
+                        },
+                        "familyName": {
+                            "type": "text"
+                        },
+                        "middleName": {
+                            "type": "text"
+                        },
+                        "pictureUri": {
+                            "type": "keyword"
+                        },
+                        "dateOfBirth": {
+                            "type": "date"
+                        },
+                        "locale": {
+                            "type": "keyword"
+                        },
+                        "timezone": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "profile": {
+                    "type": "object",
+                    "properties": {
+                        "email": {
+                            "type": "keyword"
+                        },
+                        "synopsys": {
+                            "type": "text"
+                        },
+                        "description": {
+                            "type": "text"
+                        },
+                        "hometown": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "object",
+                            "properties": {
+                                "countryCode": {
+                                    "type": "keyword"
+                                },
+                                "province": {
+                                    "type": "keyword"
+                                },
+                                "city": {
+                                    "type": "keyword"
+                                },
+                                "address": {
+                                    "type": "text"
+                                },
+                                "postalCode": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "education": {
+                            "type": "object",
+                            "properties": {
+                                "institution": {
+                                    "type": "text"
+                                },
+                                "location": {
+                                    "type": "text"
+                                },
+                                "degree": {
+                                    "type": "text"
+                                },
+                                "field": {
+                                    "type": "text"
+                                },
+                                "description": {
+                                    "type": "text"
+                                },
+                                "activities": {
+                                    "type": "text"
+                                },
+                                "fromDate": {
+                                    "type": "keyword"
+                                },
+                                "toDate": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "expertise": {
+                            "type": "object",
+                            "properties": {
+                                "area": {
+                                    "type": "text"
+                                },
+                                "level": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "experiences": {
+                            "type": "object",
+                            "properties": {
+                                "institution": {
+                                    "type": "text"
+                                },
+                                "location": {
+                                    "type": "text"
+                                },
+                                "title": {
+                                    "type": "text"
+                                },
+                                "description": {
+                                    "type": "text"
+                                },
+                                "achievements": {
+                                    "type": "text"
+                                },
+                                "fromDate": {
+                                    "type": "keyword"
+                                },
+                                "toDate": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "accomplishments": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "type": "keyword"
+                                },
+                                "title": {
+                                    "type": "text"
+                                },
+                                "location": {
+                                    "type": "text"
+                                },
+                                "description": {
+                                    "type": "text"
+                                },
+                                "fromDate": {
+                                    "type": "keyword"
+                                },
+                                "toDate": {
+                                    "type": "keyword"
+                                },
+                                "url": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "interests": {
+                            "type": "text"
+                        },
+                        "languages": {
+                            "type": "keyword"
+                        },
+                        "gender": {
+                            "type": "keyword"
+                        },
+                        "website": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "servicing": {
+                    "properties": {
+                        "availability": {
+                            "type": "object",
+                            "properties": {
+                                "dayOfWeek": {
+                                    "type": "keyword"
+                                },
+                                "hours": {
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        "mode": {
+                            "type": "keyword"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

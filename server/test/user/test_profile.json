@@ -1,0 +1,61 @@
+{
+  "email": "test.me@test.com",
+  "accountUid": "TypeUID",
+  "synopsys": "Hello World",
+  "description": "I'm a test",
+
+  "hometown": "Testlandia",
+  "location": {
+    "countryCode": "TE",
+    "province": "Testo",
+    "city": "Testpolis",
+    "address": "1234 Test St.",
+    "postalCode": "123455"
+  },
+
+  "education": [
+    {
+      "institution": "Test Univ.",
+      "location": "Test City",
+      "degree": "Master",
+      "field": "QA",
+      "description": "Test hard",
+      "activities": "Test and re-test",
+      "fromDate": "2010",
+      "toDate": "2014"
+    }
+  ],
+  "expertise": [
+    {
+      "area": "testing",
+      "level": 10
+    }
+  ],
+  "experiences": [
+    {
+      "institution": "Test Inc.",
+      "location": "Quality City",
+      "title": "Chief Test Officer",
+      "description": "Maintain high quality",
+      "achievements": "top quality",
+      "fromDate": "2015",
+      "toDate": "2017-08"
+    }
+  ],
+  "accomplishments": [
+    {
+      "kind": "project",
+      "title": "Test Framework",
+      "location": "Testullia",
+      "description": "Simple test framework",
+      "fromDate": "2016-01",
+      "toDate": "2016-03",
+      "url": "http://testing.org"
+    }
+  ],
+  "interests": ["testing", "qa", "programming"],
+  "languages": ["en", "sp"],
+  "gender": "male",
+  "website": "http://test.testing.tt"
+
+}

@@ -58,7 +58,7 @@ const profileSchema = new mongoose.Schema( extendSchemaDefBase({
   ],
   accomplishments: [
     {
-      type: String, // certification, awards, recognition, patents, papers, project
+      kind: String, // certification, awards, recognition, patents, papers, project
       title: String,
       location: String,
       description: String,
@@ -89,7 +89,7 @@ profileSchema.pre("update", function update(next) {
 });
 
 
-const ProfileModel = mongoose.model<IProfileModel>("ProfileModel", profileSchema);
+const ProfileModel = mongoose.model<IProfileModel>("Profile", profileSchema);
 
 class ProfileRepo extends MongooseRepositoryBase<IProfile, IProfileModel>  {
 

@@ -46,7 +46,7 @@ export interface IProfile extends IEntityBase {
   ];
   accomplishments?: [
     {
-      type: string; // certification, awards, recognition, patents, papers, project
+      kind: string; // certification, awards, recognition, patents, papers, project
       title: string;
       location: string;
       description: string;
