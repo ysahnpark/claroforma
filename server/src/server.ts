@@ -32,6 +32,7 @@ console.log("{\"passportConfig.strategies\"=" + JSON.stringify(passportConfig.st
 /**
  * Controllers (route handlers).
  */
+import { managementRouter } from "./management-router";
 import { siteRouter } from "./site/site-router";
 import { authRouter } from "./auth/auth-router";
 import { userRouter } from "./user/user-router";
@@ -54,7 +55,7 @@ app.engine(".hbs", exphbs({defaultLayout: "main", extname: ".hbs"}));
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "../views"));
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8080);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -79,6 +80,8 @@ app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }))
  * API examples routes.
  */
 app.use("", siteRouter);
+
+app.use("/manage", managementRouter);
 
 app.use("/profiles", userRouter);
 
