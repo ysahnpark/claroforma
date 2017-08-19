@@ -1,7 +1,7 @@
 {
   "name": "claroforma-web-ui",
   "version": "1.0.0",
-  "description": "Claroforma Web UI with VueNu+Nuxtxt",
+  "description": "Claroforma Web UI with Vue+Nuxt",
   "author": "Young-Suk Ahn Park",
   "private": true,
   "scripts": {

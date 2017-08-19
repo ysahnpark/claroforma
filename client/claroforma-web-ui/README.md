@@ -1,6 +1,6 @@
 # claroforma-web-ui
 
-> Claroforma Web UI with VueNu+Nuxtxt
+> Claroforma Web UI with Vue+Nuxt
 
 ## Build Setup
 
