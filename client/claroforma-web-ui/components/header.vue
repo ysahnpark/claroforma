@@ -23,6 +23,10 @@
               <a class="item" href="#">Link Item</a>
             </div>
           </div>
+          <div class="ui right item">
+            <a href="#" class="item">Registrar</a>
+            <a href="#" class="item">Ingresar</a>
+          </div>
         </div>
       </div>
 
