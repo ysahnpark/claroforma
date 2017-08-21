@@ -13,21 +13,36 @@
         </div>
       </div>
     </div>
-    <SubjectMenu />
-    <div class="links">
-      <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-      <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+    <SubjectMenu ></SubjectMenu>
+    <div>
+      Busca tutor a la medida
     </div>
+
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
 import SubjectMenu from '~/components/subjectmenu.vue'
 
 export default {
   components: {
     SubjectMenu
   }
+
+  /*
+  asyncData (context) {
+    axios.get('http://localhost:8080/api/categories')
+      .then((res) => {
+        console.log(res.data)
+        return { categories: res.data }
+      })
+      .catch((e) => {
+        console.log(e)
+        // console.log({ statusCode: 404, message: 'Post not found' })
+      })
+  }
+  */
 }
 </script>
 
