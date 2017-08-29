@@ -67,6 +67,7 @@ const profileSchema = new mongoose.Schema( extendSchemaDefBase({
       url: String,
     }
   ],
+  style: String,
   interests: Array,
   languages: Array,
   gender: String,

@@ -55,6 +55,7 @@ export interface IProfile extends IEntityBase {
       url: string;
     }
   ];
+  style?: string; // Working/teaching style: hands-on, theory-first...
   interests?: Array<string>;
   languages?: Array<string>;
   gender?: string;
