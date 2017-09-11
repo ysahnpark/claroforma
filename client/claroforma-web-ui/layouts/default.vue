@@ -27,10 +27,14 @@ export default {
 
 <style>
 .main.container {
-  margin-top: 2em;
+  margin-top: 16px;
 }
 .ui.footer.segment {
   margin: 5em 0em 0em;
   padding: 5em 0em;
+}
+.main-content {
+  margin-top: 70px;
+  padding: 10px
 }
 </style>

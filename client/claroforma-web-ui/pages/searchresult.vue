@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top:70px; padding: 10px">
+  <div class="main-content">
     <div class="ui grid">
       <div class="four wide column" style="background-color:#f7f7f7" ><!-- NAV PANE -->
         <FilterSide ></FilterSide>
@@ -71,11 +71,5 @@ export default {
 </script>
 
 <style>
-.jumbotron {
-  background-image: url("/images/cover-people-a.jpeg") ;
-  background-size: cover;
-  height: 300px;
-  padding-top: 2em;
-}
 
 </style>
