@@ -2,54 +2,18 @@
   <div style="margin-top:70px; padding: 10px">
     <div class="ui grid">
       <div class="four wide column" style="background-color:#f7f7f7" ><!-- NAV PANE -->
-          <form class="ui mini form">
-            <h4 class="ui dividing header">Busqueda</h4>
-            <div class="inline fields">
-              <div class="sixteen wide field">
-                <label>Tema</label>
-                <input type="text" placeholder="Tema">
-              </div>
-            </div>
-
-            <div class="inline fields">
-              <div class="sixteen wide field">
-                <label>Nivel</label>
-                <input type="text" placeholder="Nivel">
-              </div>
-            </div>
-
-            <div class="inline fields">
-              <div class="sixteen wide field">
-                <label>Ubicacion</label>
-                <input type="text" placeholder="Ubicacion">
-              </div>
-            </div>
-
-            <hr />
-            Disponibilidad
-            <div class="fields" v-for="dow in references.dows">
-              <div class="ui checkbox">
-                <input type="checkbox" tabindex="0" name="">
-                <label>{{ dow.name }}</label>
-              </div>
-            </div>
-
-            <hr />
-            Sexo
-            <div class="fields" v-for="gender in references.genders">
-              <div class="ui checkbox">
-                <input type="checkbox" tabindex="0" name="">
-                <label>{{ gender.name }}</label>
-              </div>
-            </div>
-
-
-
-            <div class="ui submit button">Buscar</div>
-          </form>
+        <FilterSide ></FilterSide>
       </div>
 
       <div class="twelve wide column" ><!-- CONTENT PANE -->
+
+        <div class="ui breadcrumb">
+          <a class="section">Home</a>
+          <span class="divider">/</span>
+          <a class="section" href="/searchresult">Search</a>
+          <span class="divider">/</span>
+          <div class="active section">{{ user.account.givenName }} </div>
+        </div>
 
         <div class="ui items ">
           <div class="item">
@@ -80,12 +44,13 @@
 
           <!-- Tabs -->
           <div class="ui secondary pointing menu">
-            <a class="item" data-tab="about-me">A cerca de mi</a>
-            <a class="item active" data-tab="availability">Disponibilidad</a>
+            <a class="item active" data-tab="about-me">A cerca de mi</a>
+            <a class="item" data-tab="availability">Disponibilidad</a>
             <a class="item" data-tab="qna">Preguntas y Respuestas</a>
           </div>
           <div class="ui bottom attached tab segment active" data-tab="about-me">
-            <p>About me</p>
+            <h3>About me</h3>
+            {{ user.profile.description }}
           </div>
           <div class="ui bottom attached tab segment " data-tab="availability">
             <p>availability</p>
@@ -93,7 +58,6 @@
           <div class="ui bottom attached tab segment " data-tab="qna">
             <p>qna</p>
           </div>
-
 
         </div>
 
@@ -105,67 +69,43 @@
 </template>
 
 <script>
-// import axios from 'axios'
-import SubjectMenu from '~/components/subjectmenu.vue'
+import axios from 'axios'
+import FilterSide from '~/components/filter-side-pane.vue'
 import testProfiles from '~/tests/data/user-profiles.json'
 // import $ from 'jquery'
 
 if (process.browser) {
+  // Block executed only in the browser.
+  // Needed to run jquery for the semantic ui's tab functionality
   var s = document.createElement('script')
   s.text = ' $(".menu .item").tab()'
   document.getElementsByTagName('head')[0].appendChild(s)
   console.log('Hello browser')
 }
-console.log('Hello server')
 
 export default {
   components: {
-    SubjectMenu
+    FilterSide
   },
 
   data () {
     return {
-      references: {
-        dows: [
-          {
-            name: 'Lunes', index: 0
-          },
-          {
-            name: 'Martes', index: 0
-          },
-          {
-            name: 'Miercoles', index: 0
-          },
-          {
-            name: 'Jueves', index: 0
-          },
-          {
-            name: 'Viernes', index: 0
-          }
-        ],
-        genders: [
-          { name: 'Femenino', value: 'f' },
-          { name: 'Masculino', value: 'm' }
-        ]
-      },
       user: testProfiles[0]
-
     }
-  }
+  },
 
-  /*
   asyncData (context) {
-    axios.get('http://localhost:8080/api/categories')
+    console.log('context.params:' + JSON.stringify(context.params))
+    axios.get('http://localhost:8080/api/users/' + context.params.uid)
       .then((res) => {
         console.log(res.data)
-        return { categories: res.data }
+        return { user: testProfiles[0] }
       })
       .catch((e) => {
-        console.log(e)
+        // console.log(e)
         // console.log({ statusCode: 404, message: 'Post not found' })
       })
   }
-  */
 }
 </script>
 

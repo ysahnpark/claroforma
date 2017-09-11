@@ -1,6 +1,7 @@
 [
   {
     "account": {
+      "uid": "test012",
       "givenName": "Maria",
       "familyName": "Martinez"
     },

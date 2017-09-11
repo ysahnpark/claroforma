@@ -7,13 +7,21 @@
 
       <div class="twelve wide column" ><!-- CONTENT PANE -->
 
-        <div class="ui items" v-for="user in result">
+        <div class="ui items ">
           <div class="item">
             <div class="image">
               <img  class="ui tiny circular image" src="/images/user-icon-female.png" >
+
+              <div class="ui one column stackable center aligned page grid">
+                 <div class="column twelve wide">
+                     <button class="ui orange button">Contactar</button>
+                 </div>
+              </div>
+
             </div>
+
             <div class="content">
-              <a class="header" v-bind:href="user._href.info">{{ user.account.givenName }} {{ user.account.familyName }}</a>
+              <a class="header">{{ user.account.givenName }} {{ user.account.familyName }}</a>
               <div class="meta">
                 <span>{{ user.profile.location.city }}, {{ user.profile.location.province }}</span>
               </div>
@@ -25,11 +33,29 @@
               </div>
             </div>
           </div>
-          <hr />
+
+          <!-- Tabs -->
+          <div class="ui secondary pointing menu">
+            <a class="item active" data-tab="about-me">A cerca de mi</a>
+            <a class="item" data-tab="availability">Disponibilidad</a>
+            <a class="item" data-tab="qna">Preguntas y Respuestas</a>
+          </div>
+          <div class="ui bottom attached tab segment active" data-tab="about-me">
+            <p>About me</p>
+          </div>
+          <div class="ui bottom attached tab segment " data-tab="availability">
+            <p>availability</p>
+          </div>
+          <div class="ui bottom attached tab segment " data-tab="qna">
+            <p>qna</p>
+          </div>
+
         </div>
 
       </div>
-  </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -37,6 +63,16 @@
 // import axios from 'axios'
 import FilterSide from '~/components/filter-side-pane.vue'
 import testProfiles from '~/tests/data/user-profiles.json'
+// import $ from 'jquery'
+
+if (process.browser) {
+  // Block executed only in the browser.
+  // Needed to run jquery for the semantic ui's tab functionality
+  var s = document.createElement('script')
+  s.text = ' $(".menu .item").tab()'
+  document.getElementsByTagName('head')[0].appendChild(s)
+  console.log('Hello browser')
+}
 
 export default {
   components: {
@@ -44,13 +80,8 @@ export default {
   },
 
   data () {
-    testProfiles.forEach((el) => {
-      el._href = {
-        info: '/user/' + el.account.uid
-      }
-    })
     return {
-      result: testProfiles
+      user: testProfiles[0]
     }
   }
 
