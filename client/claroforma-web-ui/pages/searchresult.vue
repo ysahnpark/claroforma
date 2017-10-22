@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="default-content">
     <div class="ui grid">
       <div class="four wide column" style="background-color:#f7f7f7" ><!-- NAV PANE -->
         <FilterSide ></FilterSide>

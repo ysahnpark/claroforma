@@ -1,24 +1,26 @@
 <template>
       <form class="ui mini form">
-        <h4 class="ui dividing header">Busqueda</h4>
+        <h4 class="ui dividing header">Búsqueda</h4>
         <div class="inline fields">
           <div class="sixteen wide field">
             <label>Tema</label>
-            <input type="text" placeholder="Tema">
+            <input name="subject" type="text" placeholder="Tema">
           </div>
         </div>
 
         <div class="inline fields">
           <div class="sixteen wide field">
             <label>Nivel</label>
-            <input type="text" placeholder="Nivel">
+            <select name="level" class="ui dropdown">
+              <option v-bind:value="level.name"  v-for="level in references.levels">{{ level.value }}</option>
+            </select>
           </div>
         </div>
 
         <div class="inline fields">
           <div class="sixteen wide field">
             <label>Ubicacion</label>
-            <input type="text" placeholder="Ubicacion">
+            <input name="location" type="text" placeholder="Ubicacion">
           </div>
         </div>
 
@@ -47,35 +49,12 @@
 
 
 <script>
+import searchParams from '~/tests/data/search-params.json'
+
 export default {
   data () {
     return {
-      references: {
-        dows: [
-          {
-            name: 'Lunes', index: 1
-          },
-          {
-            name: 'Martes', index: 2
-          },
-          {
-            name: 'Miercoles', index: 3
-          },
-          {
-            name: 'Jueves', index: 4
-          },
-          {
-            name: 'Viernes', index: 5
-          },
-          {
-            name: 'Sabado', index: 6
-          }
-        ],
-        genders: [
-          { name: 'Femenino', value: 'f' },
-          { name: 'Masculino', value: 'm' }
-        ]
-      }
+      references: searchParams
     }
   }
 

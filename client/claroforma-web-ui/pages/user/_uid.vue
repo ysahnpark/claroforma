@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="default-content">
     <div class="ui grid">
       <div class="four wide column" style="background-color:#f7f7f7" ><!-- NAV PANE -->
         <FilterSide ></FilterSide>
@@ -8,9 +8,9 @@
       <div class="twelve wide column" ><!-- CONTENT PANE -->
 
         <div class="ui breadcrumb">
-          <a class="section">Home</a>
+          <a class="section">Inicio</a>
           <span class="divider">/</span>
-          <a class="section" href="/searchresult">Search</a>
+          <a class="section" href="/searchresult">Búsqueda</a>
           <span class="divider">/</span>
           <div class="active section">{{ user.account.givenName }} </div>
         </div>
@@ -22,7 +22,7 @@
 
               <div class="ui one column stackable center aligned page grid">
                  <div class="column twelve wide">
-                     <button class="ui orange button">Contactar</button>
+                     <button id="btn-contact" class="ui orange button">Contactar</button>
                  </div>
               </div>
 
@@ -49,8 +49,10 @@
             <a class="item" data-tab="qna">Preguntas y Respuestas</a>
           </div>
           <div class="ui bottom attached tab segment active" data-tab="about-me">
-            <h3>About me</h3>
+            <h4>A cerca de mi</h4>
             {{ user.profile.description }}
+            <h4>Estilo</h4>
+            {{ user.profile.style }}
           </div>
           <div class="ui bottom attached tab segment " data-tab="availability">
             <p>availability</p>
@@ -64,6 +66,46 @@
       </div>
     </div>
 
+    <!-- model box -->
+    <div class="ui small modal">
+      <div class="header">Contactar</div>
+      <div class="content">
+        <form class="ui form">
+          <div class="fields">
+            <div class="field">
+              <label>Tema</label>
+              <input type="text" name="subject" placeholder="tema">
+            </div>
+            <div class="field">
+              <label>Nivel</label>
+              <input type="text" name="level" placeholder="Nivel">
+            </div>
+          </div>
+          <div class="field">
+            <label>Ubicacion</label>
+            <input type="text" name="location" placeholder="Ubicacion">
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>Dias</label>
+              <input type="text" name="days" placeholder="days">
+            </div>
+            <div class="field">
+              <label>Fecha aprox. de comienzo</label>
+              <input type="text" name="startDate" placeholder="Fecha de comienzo">
+            </div>
+          </div>
+          <div class="field">
+            <label>Mensaje</label>
+            <textarea rows="2"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="actions">
+        <button class="ui primary button" name="submit">Enviar</button>
+        <div class="ui cancel button">Cancelar</div>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -78,7 +120,10 @@ if (process.browser) {
   // Block executed only in the browser.
   // Needed to run jquery for the semantic ui's tab functionality
   var s = document.createElement('script')
-  s.text = ' $(".menu .item").tab()'
+  var script = '$(".menu .item").tab();'
+  script += '$("#btn-contact").click(function(){$(".ui.modal").modal("show")});'
+  s.text = script
+
   document.getElementsByTagName('head')[0].appendChild(s)
   console.log('Hello browser')
 }

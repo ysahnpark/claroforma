@@ -1,0 +1,34 @@
+{
+  "dows": [
+    {
+      "name": "Lunes", "index": 1
+    },
+    {
+      "name": "Martes", "index": 2
+    },
+    {
+      "name": "Miercoles", "index": 3
+    },
+    {
+      "name": "Jueves", "index": 4
+    },
+    {
+      "name": "Viernes", "index": 5
+    },
+    {
+      "name": "Sabado", "index": 6
+    }
+  ],
+  "genders": [
+    { "name": "Femenino", "value": "f" },
+    { "name": "Masculino", "value": "m" }
+  ],
+  "levels": [
+    { "name": "k", "value": "Kinder" },
+    { "name": "elem", "value": "Primaria" },
+    { "name": "middle", "value": "Secundaria 1 ciclo" },
+    { "name": "high", "value": "Secundaria 2 ciclo" },
+    { "name": "undergrad", "value": "Universidad" },
+    { "name": "grad", "value": "Posgrado" }
+  ]
+}

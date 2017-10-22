@@ -7,10 +7,12 @@
         <br />
           QUÉ QUIERES APRENDER HOY?
         </h1>
-        <div class="ui action input">
-          <input type="subjecct" placeholder="Search...">
-          <button class="ui button">Encuentra Tutores</button>
-        </div>
+        <form class="ui form">
+          <div class="ui action input">
+            <input type="subjecct" name="q" placeholder="Search...">
+            <button class="ui button" href="/searchresult">Encuentra Tutores</button>
+          </div>
+        </form>
       </div>
     </div>
     <SubjectMenu ></SubjectMenu>

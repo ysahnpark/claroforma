@@ -33,7 +33,7 @@ export default {
   margin: 5em 0em 0em;
   padding: 5em 0em;
 }
-.main-content {
+.default-content {
   margin-top: 70px;
   padding: 10px
 }
