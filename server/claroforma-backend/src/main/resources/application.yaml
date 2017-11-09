@@ -1,0 +1,11 @@
+## Spring's actuator:
+management.contextPath: /api/_manage
+management.info.git.mode: full
+
+# JSON Serialization
+spring.jackson.date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+spring.jackson.joda-date-time-format: yyyy-MM-dd
+spring.jackson.serialization.write-dates-as-timestamps: false
+
+# ElasticSearch config
+spring.data.elasticsearch.cluster-nodes: localhost:9300
